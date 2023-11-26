@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="3zmsEfH" resname="Fitnatic HOME PAGE">
+        <source>Fitnatic HOME PAGE</source>
+        <target>__Fitnatic HOME PAGE</target>
+      </trans-unit>
+      <trans-unit id="2z8mmTs" resname="Fit Natic">
+        <source>Fit Natic</source>
+        <target>__Fit Natic</target>
+      </trans-unit>
+      <trans-unit id="TWxWH2H" resname="Calcul IMC">
+        <source>Calcul IMC</source>
+        <target>__Calcul IMC</target>
+      </trans-unit>
+      <trans-unit id="Y57tzx_" resname="Besoins Caloriques">
+        <source>Besoins Caloriques</source>
+        <target>__Besoins Caloriques</target>
+      </trans-unit>
+      <trans-unit id="FSjApjw" resname="Regimes Alimentaires">
+        <source>Regimes Alimentaires</source>
+        <target>__Regimes Alimentaires</target>
+      </trans-unit>
+      <trans-unit id="KOyvVAU" resname="Fiche">
+        <source>Fiche</source>
+        <target>__Fiche</target>
+      </trans-unit>
+      <trans-unit id="leoXca0" resname="Fiche Personnelles">
+        <source>Fiche Personnelles</source>
+        <target>__Fiche Personnelles</target>
+      </trans-unit>
+      <trans-unit id="70URFi8" resname="Calculateur d'IMC">
+        <source>Calculateur d'IMC</source>
+        <target>__Calculateur d'IMC</target>
+      </trans-unit>
+      <trans-unit id="JosLkrU" resname="L'Indice de Masse Corporelle (IMC) est une mesure de la corpulence d'une personne. Il est calculé en fonction du poids et de la taille. Utilisez le formulaire ci-dessous pour obtenir votre IMC.">
+        <source>L'Indice de Masse Corporelle (IMC) est une mesure de la corpulence d'une personne. Il est calculé en fonction du poids et de la taille. Utilisez le formulaire ci-dessous pour obtenir votre IMC.</source>
+        <target>__L'Indice de Masse Corporelle (IMC) est une mesure de la corpulence d'une personne. Il est calculé en fonction du poids et de la taille. Utilisez le formulaire ci-dessous pour obtenir votre IMC.</target>
+      </trans-unit>
+      <trans-unit id="0FmZzfU" resname="Calculer">
+        <source>Calculer</source>
+        <target>__Calculer</target>
+      </trans-unit>
+      <trans-unit id="4RKexZu" resname="Resultat IMC :">
+        <source>Resultat IMC :</source>
+        <target>__Resultat IMC :</target>
+      </trans-unit>
+      <trans-unit id="zPy4bwj" resname="IMC:">
+        <source>IMC:</source>
+        <target>__IMC:</target>
+      </trans-unit>
+      <trans-unit id="XAgKS22" resname="Catégorie IMC:">
+        <source>Catégorie IMC:</source>
+        <target>__Catégorie IMC:</target>
+      </trans-unit>
+      <trans-unit id="FGxtorD" resname="Poids Idéal:">
+        <source>Poids Idéal:</source>
+        <target>__Poids Idéal:</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -30,19 +30,36 @@ class CaloriqueType extends AbstractType
         'high' => 'High',
     ];
 
+    const REGIME_CHOICES = [
+        'vegan' => 'Vegan',
+        'vegetarian' => 'Vegetarian',
+        'pescatarian' => 'Pescatarian',
+        'omnivore' => 'Omnivore',
+    ];
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('objectif', ChoiceType::class, [
                 'choices' => array_flip(self::OBJECTIF_CHOICES),
+                'expanded' => true, // Utiliser des boutons radio
+                'multiple' => false, // Ne pas autoriser la sélection multiple
             ])
             ->add('besoinsCaloriques')
             ->add('activite', ChoiceType::class, [
                 'choices' => array_flip(self::ACTIVITE_CHOICES),
+                'expanded' => true,
+                'multiple' => false,
             ])
-            ->add('regimeAlimentaire')
+            ->add('regimeAlimentaire', ChoiceType::class, [
+                'choices' => array_flip(self::REGIME_CHOICES),
+                'expanded' => true,
+                'multiple' => false,
+            ])
             ->add('niveauStress', ChoiceType::class, [
                 'choices' => array_flip(self::NIVEAU_STRESS_CHOICES),
+                'expanded' => true,
+                'multiple' => false,
             ])
         ;
     }

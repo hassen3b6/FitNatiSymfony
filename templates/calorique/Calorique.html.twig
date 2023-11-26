@@ -1,164 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Calorique/Style.css') }}">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
 
+        .question-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #start {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Add any additional styles you need */
+    </style>
     <title>Fitnatic HOME PAGE</title>
-<!--
+    <link rel="stylesheet" type="text/css" href="{{ asset('Calorique/Style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+</head>
 
-TemplateMo 548 Training Studio
-
-https://templatemo.com/tm-548-training-studio
-
--->
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('user/assets/css/templatemo-training-studio.css') }}">
-
-    </head>
-    
-    <body>
-    
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-      <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-    
-    
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Fit<em> Natic</em></a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                 
-                            <li class="scroll-to-section"><a href="#features">CalculImc</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">MB</a></li>
-                            <li class="scroll-to-section"><a href="#schedule">Regimes</a></li>
-                    <li class="scroll-to-section"><a href="{{ path('ficheDB') }}">Fiche</a></li>
-
-                      
-                           
-                            
-                        </ul>        
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
+<body class="light-theme">
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#">
+                <h2 class="nav-brand">Fit Natic</h2>
+            </a>
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="{{ path('add_Fiche') }}" class="list-link">Calcul IMC</a>
+                    </li>
+                    <li class="list-item screen-lg-">
+                        <a href="{{ path('calculate_calorique') }}">Besoins Caloriques </a>
+                    </li>
+                    <li class="list-item screen-lg-">
+                        <a href="#" class="list-link">Regimes Alimentaires </a>
+                    </li>
+                </ul>
             </div>
-        </div>
+            <div class="list list-right">
+                <button class="btn place-items-center" id="theme-toggle-btn">
+                    <i class="ri-sun-line sun-icon"></i>
+                    <i class="ri-moon-line moon-icon"></i>
+                </button>
+                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-btn">
+                    <i class="ri-menu-3-line open-icon"></i>
+                    <i class="ri-close-line close-icon"></i>
+                </button>
+                <a href="{{ path('afficher_Imcs') }}" class="list-link screen-sm-hidden btn sign-in-btn">Fiche Personnelles</a>
+            </div>
+        </nav>
     </header>
-    <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Main Banner Area Start ***** -->
-    <!-- ***** Main Banner Area Start ***** -->
-<!-- ***** Main Banner Area Start ***** -->
+    <main class="d-grid">
+        <!-- Tricks-and-tips-articles -->
+        <section class="tricks-and-tips-articles section-header-offset" id="tricks-and-tips">
+            <div class="tricks-and-tips-articles-container container d-grid">
+                <div id="start" class="question-section">
+                    <h1>Devenez La Meilleure Version de Vous-Même</h1>
+                    <p>Faites notre quiz pour obtenir un plan de menus personnel et atteindre vos objectifs en matière de poids !</p>
+                    <button onclick="startQuiz()">Start Quiz</button>
+                </div>
 
+                <div id="question1" class="question-section" style="display: none;">
+                    <p>Votre Objectif: {{ form_row(form.objectif) }}</p>
+                    <button onclick="showNextQuestion(1, 2)">Next</button>
+                </div>
 
-<div class="main-banner" id="top">
-    <video autoplay muted loop id="bg-video">
-        <source src="user/assets/images/BROLL CINEMATIC FITNESS VIDEO _ SHORT GYM PROMO.mp4" type="video/mp4" />
-    </video>
+                <div id="question2" class="question-section" style="display: none;">
+                    <p>Votre Activite: {{ form_row(form.activite) }}</p>
+                    <button onclick="showNextQuestion(2, 3)">Next</button>
+                </div>
 
-    <div class="video-overlay header-text">
-        <div class="caption">
-          
-        
-            <br>
-         
-            <br>
-<br>
-            <p><h6>Indiquez votre poids (kg) et taille (en cm) pour calculer votre Indice de Masse Corporelle:</h6></p>
+                <div id="question3" class="question-section" style="display: none;">
+                    <p>Votre Regime Alimentaire: {{ form_row(form.regimeAlimentaire) }}</p>
+                    <button onclick="showNextQuestion(3, 4)">Next</button>
+                </div>
 
-<br>
+                <div id="question4" class="question-section" style="display: none;">
+                    <p>Votre Niveau de Stress: {{ form_row(form.niveauStress) }}</p>
+                    <button onclick="calculateCalories()">Calculate</button>
+                </div>
 
+                <div id="result" style="display: none;">
+                    <p>Vos Besoins Caloriques: {{ form_row(form.besoinsCaloriques) }}</p>
+                </div>
 
+                {{ form_start(form) }}
 
-{# templates/caloriqe/new.html.twig #}
+                
 
+                {{ form_end(form) }}
+            </div>
+        </section>
+    </main>
+    <script src="{{ asset('Calorique/imc.js') }}"></script>
+    <script>
+                    function startQuiz() {
+                        // Hide the start section
+                        document.getElementById('start').style.display = 'none';
 
+                        // Show the first question
+                        document.getElementById('question1').style.display = 'block';
+                    }
 
-{% block body %}
-    <h1>Nouveau Calorique</h1>
+                    function showNextQuestion(currentQuestion, nextQuestion) {
+                        // Hide the current question
+                        document.getElementById('question' + currentQuestion).style.display = 'none';
 
-    {{ form_start(form) }}
+                        // Show the next question
+                        document.getElementById('question' + nextQuestion).style.display = 'block';
+                    }
 
-    {{ form_row(form.objectif) }}
-    
-    {{ form_row(form.activite) }}
-    {{ form_row(form.regimeAlimentaire) }}
-    {{ form_row(form.niveauStress) }}
-   {{ form_row(form.besoinsCaloriques) }}
-    <button type="submit">Enregistrer</button>
+                    function calculateCalories() {
+                        // Add logic here to calculate calories based on user inputs
 
-    {{ form_end(form) }}
-{% endblock %}
+                        // Display the result
+                        document.getElementById('result').style.display = 'block';
+                    }
+                </script>
+</body>
 
-
-
-
-
-
-    <!-- ***** Main Banner Area End ***** -->
-
-    <!-- ***** Features Item Start ***** -->
-    
-    <!-- ***** Call to Action End ***** -->
-
-    <!-- ***** Our Classes Start ***** -->
-   
-    <!-- ***** Contact Us Area Ends ***** -->
-    
-    <!-- ***** Footer Start ***** -->
-
-
-    <!-- jQuery -->
-<!-- Include CSS stylesheets -->
-<link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/font-awesome.css') }}">
-<link rel="stylesheet" href="{{ asset('user/assets/css/templatemo-training-studio.css') }}">
-
-<!-- Include JavaScript libraries -->
-<script src="{{ asset('user/assets/js/jquery-2.1.0.min.js') }}"></script>
-
-<!-- Bootstrap -->
-<script src="{{ asset('user/assets/js/popper.js') }}"></script>
-<script src="{{ asset('user/assets/js/bootstrap.min.js') }}"></script>
-
-<!-- Plugins -->
-<script src="{{ asset('user/assets/js/scrollreveal.min.js') }}"></script>
-<script src="{{ asset('user/assets/js/waypoints.min.js') }}"></script>
-<script src="{{ asset('user/assets/js/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('user/assets/js/imgfix.min.js') }}"></script>
-<script src="{{ asset('user/assets/js/mixitup.js') }}"></script>
-<script src="{{ asset('user/assets/js/accordions.js') }}"></script>
-
-<!-- Global Init -->
-<script src="{{ asset('user/assets/js/custom.js') }}"></script>
-
-
-  </body>
 </html>

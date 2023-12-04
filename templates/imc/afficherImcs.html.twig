@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('Fiche/Style.css') }}">
-
+<script href "https://maps.googleapis.com/maps/api/js?key=AIzaSyA5wVTk5SQ3alGnIqPchU9CmU7v__ypM6Q"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <title>Fitnatic HOME PAGE</title>
@@ -21,8 +21,7 @@
 <div class="container">
     <div class="menu-column">
         <ul class="nav">
-          
-            <li class="chat"></li>
+        
             <li class="calendar"id="clipboardTrigges"></li>
 
     <li class="clipboard"id="clipboardTrigge" ></li>
@@ -43,11 +42,11 @@
     });
 </script>
         </ul>
-        <div class="profile"><img src="https://placeimg.com/100/100/face"/></div>
+        <div class="profile"></div>
     </div>
     <div class="summary-column">
-        <div class="profile-img" id="profileImage"><img src="https://placeimg.com/400/400/face"/>
-            <div class="name">Hassen<br> Kaffel</div>
+        <div class="profile-img" id="profileImage">
+            <div class="name"><br> </div>
         </div>
  <div class="statistics">
             <h2>summary</h2>
@@ -60,7 +59,7 @@
                     <div class="data"><span>{{ latestImc.taille }} cm</span></div>
                 </div>
                 <div class="bmi"><span class="title title-bmi">{{ latestImc.IMC }}</span></div>
-                <div class="fat"><span class="title title-fat">11</span></div>
+                <div class="fat"><span class="title title-"></span></div>
             {% else %}
                 <p>No data available.</p>
             {% endif %}
@@ -71,7 +70,7 @@
       <div class="nav">
         <div class="content">
           <p>
-            <span class="name"></span>Welcom to </p><span class="shape score">Fit</span><span class="shape">Natic</span>
+            <span class="name"></span>Welcome to </p><span class="shape score">Fit</span><span class="shape">Natic</span>
         </div>
       </div>
   
@@ -110,7 +109,7 @@
    <div class="bmi-info">
     <div class="bmi-graph">
         <div class="bmi-graph-container">
-            <h2>BMI Analytics</h2>
+            <h2>Analytics</h2>
             <div class="chart-container">
                 <canvas id="weightChart"></canvas>
             </div>
@@ -118,61 +117,55 @@
     </div>
 </div>
 
-    <div class="float-none"></div>
-    <div class="split-container">
-      <div class="split bottom">
-        <h2>Appointments</h2>
-        <div class="appointments">
-          <div class="calendar-container">
-            <div class="calendar"></div>	
+
          
-            <div class="content">
-              <table class="appointment-table">
-                <tr>
-                  <td id="time"></td>
-                </tr>
-                <tr>
-                  <td id="title"></td>
-                </tr>
-                <tr>
-                  <td id="name"></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="split bottom">
-        <h2>Expert de Santé around</h2>
-        <table class="doctor-grid">
-          <tr>
-            <td height="65"><img src=""/></td>
-            <td><img src=""/></td>
-            <td><img src=""/></td>
-          </tr>
-          <tr>
-            <td><img src="https://placeimg.com/65/65/face"/></td>
-            <td><img src="https://placeimg.com/65/65/people"/></td>
-            <td id="expand">
-              <div class="background"></div>+8
-              
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="split bottom">
-        <div id="map"></div>
-        <div class="map-overlay">
-          <h2>Steps today</h2><span class="steps">4578</span><span class="distance">1.7 km</span>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
+     
+
  
 </div>
 
   
     <script src="{{ asset('Fiche/fiche.js') }}"></script>
- 
+<script>
+    var poidsActuel = {{ latestImc.poids }};
+    var poidsIdeal = {{ latestImc.poidsIdeal }};
+    var ctx = document.getElementById('weightChart').getContext('2d');
+
+    // Créez le graphique
+    var weightChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Poids Actuel',
+                data: [poidsActuel, 0], // Start from 0 for the second value
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Poids Idéal',
+                data: [poidsIdeal, 0], // Start from 0 for the second value
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        display: false 
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+
 </body>
 </html>

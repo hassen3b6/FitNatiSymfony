@@ -1,3 +1,4 @@
+
 /* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
@@ -413,10 +414,214 @@ body.dark-theme {
     display: block;
   }
   main {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    height: 100vh;
+}
+
+  .popular-tags-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Style pour la section tricks-and-tips-articles */
+.tricks-and-tips-articles {
+ 
+  text-align: center; /* Centrer le contenu */
+  padding: var(--m-md); /* Ajouter un peu de marge */
+}
+
+
+.tricks-and-tips-articles-container,
+.tricks-and-tips-article-card {
+  position: relative;
+  gap: var(--gap);
+  border-radius: var(--default-radius);
+}
+.article {
+  position: relative;
+  min-height: var(--item-min-height-md);
+}
+.card-img-top {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s;
+  border-radius: var(--default-radius);
+}
+.card-body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.card-category {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  color: var(--theme-color);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  border-radius: var(--default-radius);
+  position: absolute;
+  background-color: var(--background-theme-color);
+}
+.card-data-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  color: var(--theme-color);
+  gap: var(--gap);
+  background-color: var(--transparent-theme-color);
+  transition: background-color 0.5s;
+}
+.card-data-container h3 {
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+}
+.card-data {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap);
+  font-size: var(--font-size-xs);
+}
+.card-data-spacer {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--theme-color);
+  transform: rotate(45deg);
+}
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 2rem;
+  padding: 1rem 2rem;
+  color: var(--theme-color);
+  font-size: var(--font-size-xs);
+  border-radius: var(--default-radius);
+  background-color: var(--background-theme-color);
+}
+/* Populer tags style */
+.popular-tags-container {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.popular-tags-container .tag {
+  position: relative;
+  min-height: var(--item-min-height-sm);
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.tag-name {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 700;
+  text-align: end;
+  letter-spacing: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--background-theme-color);
+}
+.popular-tags-container .tag:hover .tag-name {
+  color: var(--theme-color-hover);
+}
+.popular-tags-container .tag:hover .tag-image {
+  transform: scale(1.05);
+}
+
+/* Media queries */
+@media screen and (min-width: 1024px) {
+  .menu {
+    position: relative;
+    width: initial;
+    background-color: inherit;
+  }
+  .menu.active {
+    height: initial;
+  }
+  .menu > .list {
+    flex-direction: row;
+  }
+  .screen-lg-hidden {
+    display: none;
+  }
+  .screen-sm-hidden {
+    display: block;
+  }
+  main {
     display: grid;
     grid-template-columns: 3fr 1fr;
   }
   .popular-tags-container {
     grid-template-columns: 1fr;
   }
+}
+/* Styles for the container */
+.tricks-and-tips-articles-container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Styles for the question sections */
+.question-section {
+  margin-top: 20px;
+}
+
+/* Styles for the quiz title */
+#start h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Styles for the quiz description */
+#start p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Styles for the quiz button */
+#start button,
+#question1 button,
+#question2 button,
+#question3 button,
+#question4 button,
+#result button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the quiz button */
+#start button:hover,
+#question4 button:hover,
+#result button:hover {
+  background-color: #45a049;
+}
+
+/* Styles for form elements */
+p {
+  font-size: 18px;
+  color: #333;
+}
+main {
+  display: flex;
+  justify-content: center; /* Align to the right */
+  align-items: center;
+  height: 100vh;
+}
+.d-grid {
+  display: grid;
 }

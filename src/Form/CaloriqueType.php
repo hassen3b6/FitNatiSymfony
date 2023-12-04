@@ -1,40 +1,41 @@
 <?php
+// src/Form/CaloriqueType.php
 
 namespace App\Form;
 
 use App\Entity\Calorique;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CaloriqueType extends AbstractType
 {
-    // Define constants for choices
     const OBJECTIF_CHOICES = [
-        'loseWeight' => 'Lose Weight',
-        'maintain' => 'Maintain',
-        'buildMuscle' => 'Build Muscle',
+        'Lose Weight' => 'loseWeight',
+        'Maintain' => 'maintain',
+        'Build Muscle' => 'buildMuscle',
     ];
 
     const ACTIVITE_CHOICES = [
-        'sedentary' => 'Sedentary',
-        'lightlyActive' => 'Lightly Active',
-        'moderatelyActive' => 'Moderately Active',
-        'veryActive' => 'Very Active',
+        'Sedentary' => 'sedentary',
+        'Lightly Active' => 'lightlyActive',
+        'Moderately Active' => 'moderatelyActive',
+        'Very Active' => 'veryActive',
     ];
 
     const NIVEAU_STRESS_CHOICES = [
-        'low' => 'Low',
-        'medium' => 'Medium',
-        'high' => 'High',
+        'Low' => 'low',
+        'Medium' => 'medium',
+        'High' => 'high',
     ];
 
     const REGIME_CHOICES = [
-        'vegan' => 'Vegan',
-        'vegetarian' => 'Vegetarian',
-        'pescatarian' => 'Pescatarian',
-        'omnivore' => 'Omnivore',
+        'Vegan' => 'vegan',
+        'Vegetarian' => 'vegetarian',
+        'Pescatarian' => 'pescatarian',
+        'Omnivore' => 'omnivore',
     ];
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -42,26 +43,32 @@ class CaloriqueType extends AbstractType
         $builder
             ->add('objectif', ChoiceType::class, [
                 'choices' => array_flip(self::OBJECTIF_CHOICES),
-                'expanded' => true, // Utiliser des boutons radio
-                'multiple' => false, // Ne pas autoriser la sélection multiple
+                'expanded' => true,
+                'multiple' => false,
+                'label' => false,
             ])
-            ->add('besoinsCaloriques')
             ->add('activite', ChoiceType::class, [
                 'choices' => array_flip(self::ACTIVITE_CHOICES),
                 'expanded' => true,
                 'multiple' => false,
+                'label' => false,
             ])
             ->add('regimeAlimentaire', ChoiceType::class, [
                 'choices' => array_flip(self::REGIME_CHOICES),
                 'expanded' => true,
                 'multiple' => false,
+                'label' => false,
             ])
             ->add('niveauStress', ChoiceType::class, [
                 'choices' => array_flip(self::NIVEAU_STRESS_CHOICES),
                 'expanded' => true,
                 'multiple' => false,
+                'label' => false,
             ])
-        ;
+     
+            ->add('save', SubmitType::class, [
+                'label' => 'Save',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

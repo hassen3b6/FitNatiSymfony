@@ -19,7 +19,7 @@ class CaloriqueRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Calorique::class);
-    }
+    }}
 
 //    /**
 //     * @return Calorique[] Returns an array of Calorique objects
@@ -45,4 +45,4 @@ class CaloriqueRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+

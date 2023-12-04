@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
-    <meta http-equiv="Content-Security-Policy" content="script-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/">
+
     <title>Fitnatic HOME PAGE</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('CalculImc/Style.css') }}">
-    <style>
-        /* Add your custom styles here */
+<!--
+
+TemplateMo 548 Training Studio
+
+https://templatemo.com/tm-548-training-studio
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/css/templatemo-training-studio.css') }}">
+<style>
+
   main {
     display: flex;
     justify-content: flex-end; /* Align to the right */
     align-items: center;
     height: 100vh;
 }
+.section-header-offset {
+    margin-top: 80px;
+}
 
+.tricks-and-tips-articles {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
 
-        h2 {
-            color: #333;
-        }
-
-        p {
-            color: #555;
-        }
-/* Style for the form grid */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -94,47 +103,99 @@
         p {
             color: #777;
         }
-    </style>
-</head>
 
-<body class="light-theme">
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="navbar container">
-            <a href="#">
-                <h2 class="nav-brand">Fit Natic</h2>
-            </a>
-            <div class="menu" id="menu">
-                <ul class="list">
-                    <li class="list-item">
-                        <a href="{{ path('add_Fiche') }}" class="list-link">Calcul IMC</a>
-                    </li>
-                    <li class="list-item screen-lg-">
-                        <a href="{{ path('calculate_calorique') }}">Besoins Caloriques </a>
-                    </li>
-                    <li class="list-item screen-lg-">
-                        <a href="#" class="list-link">Regimes Alimentaires </a>
-                    </li>
-                
-                </ul>
-            </div>
-            <div class="list list-right">
-           <button class="btn place-items-center" id="theme-toggle-btn">
-    <i class="ri-sun-line sun-icon"></i>
-    <i class="ri-moon-line moon-icon"></i>
-</button>
+.section-header-offset {
+    margin-top: 80px;
+}
 
-                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-btn">
-                    <i class="ri-menu-3-line open-icon"></i>
-                    <i class="ri-close-line close-icon"></i>
-                </button>
-                <a href="{{ path('afficher_Imcs') }}" class="list-link screen-sm-hidden btn sign-in-btn">Fiche Personnelles</a>
+.tricks-and-tips-articles {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+
+
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recaptcha-wrapper {
+    margin-top: 20px;
+}
+
+.btn-warning {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-warning:hover {
+    background-color: #333;
+    color: #ffcc00;
+}
+ .fit-text {
+    color: black; /* Couleur du texte noir */
+  }
+
+</style>
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                <a href="index.html" class="logo"><span class="fit-text">Fit</span><em> Natic</em></a>
+
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                              <li >  <a href=""><span class="fit-text">Home</span></a></li>
+                            <li ><a href="{{ path('add_Fiche') }}" class="list-link"><span class="fit-text">Calcul Imc</span></a></li>
+                            <li>  <a href="{{ path('calculate_calorique') }}"><span class="fit-text">Calcul Besoins Caloriques</span></a></li>
+                            <li >  <a href="{{ path('afficher_Imcs') }}">Fiche Personnelles</a></li>
+
+                           
+                            
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
-    <!-- Search -->
+
     <main class="d-grid">
-        <!-- Tricks-and-tips-articles -->
+       
         <section class="tricks-and-tips-articles section-header-offset text-center" id="tricks-and-tips">
             <h2>Calculateur d'IMC</h2>
             <p>L'Indice de Masse Corporelle (IMC) est une mesure de la corpulence d'une personne. Il est calculé en fonction du poids et de la taille. Utilisez le formulaire ci-dessous pour obtenir votre IMC.</p>
@@ -180,7 +241,8 @@
     <button type="submit" class="btn btn-warning mt-3" id="calculerBtn">Calculer</button>
 </div>
 {{ form_end(form) }}
-
+<br>
+<br>
             <div>
                 {% if imcResult %}
                 <div>
@@ -204,9 +266,39 @@
             </div>
         </section>
     </main>
-    <script src="{{ asset('CalculImc/imc.js') }}"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LezLRwpAAAAAEjMP2ioowU3K7cjkZxxr6ajrDS7"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-</body>
+   
+    
+    <!-- ***** Contact Us Area Starts ***** -->
+    
+    <!-- ***** Contact Us Area Ends ***** -->
+    
+    <!-- ***** Footer Start ***** -->
+   
 
+    <!-- jQuery -->
+<!-- Include CSS stylesheets -->
+<link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('user/assets/css/font-awesome.css') }}">
+<link rel="stylesheet" href="{{ asset('user/assets/css/templatemo-training-studio.css') }}">
+
+<!-- Include JavaScript libraries -->
+<script src="{{ asset('user/assets/js/jquery-2.1.0.min.js') }}"></script>
+
+<!-- Bootstrap -->
+<script src="{{ asset('user/assets/js/popper.js') }}"></script>
+<script src="{{ asset('user/assets/js/bootstrap.min.js') }}"></script>
+
+<!-- Plugins -->
+<script src="{{ asset('user/assets/js/scrollreveal.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/imgfix.min.js') }}"></script>
+<script src="{{ asset('user/assets/js/mixitup.js') }}"></script>
+<script src="{{ asset('user/assets/js/accordions.js') }}"></script>
+
+<!-- Global Init -->
+<script src="{{ asset('user/assets/js/custom.js') }}"></script>
+
+
+  </body>
 </html>

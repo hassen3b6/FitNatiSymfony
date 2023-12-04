@@ -426,28 +426,3 @@ const selectElement = (selector, parent = document) => {
     searchFormIconBtn.addEventListener("click", toggleSearchForm);
     searchformCloseBtn.addEventListener("click", toggleSearchForm);
   });
-  
-
-                    function startQuiz() {
-                        // Hide the start section
-                        document.getElementById('start').style.display = 'none';
-
-                        // Show the first question
-                        document.getElementById('question1').style.display = 'block';
-                    }
-
-                    function showNextQuestion(currentQuestion, nextQuestion) {
-                        // Hide the current question
-                        document.getElementById('question' + currentQuestion).style.display = 'none';
-
-                        // Show the next question
-                        document.getElementById('question' + nextQuestion).style.display = 'block';
-                    }
-
-                    function calculateCalories() {
-                        // Add logic here to calculate calories based on user inputs
-
-                        // Display the result
-                        document.getElementById('result').style.display = 'block';
-                    }
-              

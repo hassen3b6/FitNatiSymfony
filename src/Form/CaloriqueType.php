@@ -46,6 +46,7 @@ class CaloriqueType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
                 'label' => false,
+                
             ])
             ->add('activite', ChoiceType::class, [
                 'choices' => array_flip(self::ACTIVITE_CHOICES),
@@ -64,6 +65,7 @@ class CaloriqueType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
                 'label' => false,
+                
             ])
      
             ->add('save', SubmitType::class, [

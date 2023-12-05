@@ -102,15 +102,20 @@ class ImcController extends AbstractController
       $imcResult = null;
   
       if ($form->isSubmitted() && $form->isValid()) {
-          // Verify reCAPTCHA
-          $recaptchaResponse = $request->request->get('g-recaptcha-response');
-          $captchaCheck = $recaptcha->verify($recaptchaResponse);
-  
-          if (!$captchaCheck->isSuccess()) {
-              // Handle reCAPTCHA validation failure
-              $this->addFlash('error', 'Invalid reCAPTCHA. Please try again.');
-              return $this->redirectToRoute('add_Fiche');
-          }
+# Vérification si le formulaire a été soumis et s'il est valide.
+$recaptchaResponse = $request->request->get('g-recaptcha-response');
+    # Récupération de la réponse reCAPTCHA depuis la requête.
+//
+  //        $captchaCheck = $recaptcha->verify($recaptchaResponse);
+  # Vérification si le formulaire a été soumis et s'il est valide.
+
+    //      if (!$captchaCheck->isSuccess()) {
+                 # Récupération de la réponse reCAPTCHA depuis la requête.
+
+      //        $this->addFlash('error', 'Invalid reCAPTCHA. Please try again.');        # Gestion de l'échec de validation reCAPTCHA.
+
+        //      return $this->redirectToRoute('add_Fiche');
+          //}
   
           // Continue with the rest of your form processing
           $imc->setIMC($this->calculerImc($imc->getPoids(), $imc->getTaille()));
@@ -128,7 +133,7 @@ class ImcController extends AbstractController
           ];
   
           // Optionally, you can clear the reCAPTCHA token to prevent re-submission
-          $request->getSession()->remove('g-recaptcha-response');
+         // $request->getSession()->remove('g-recaptcha-response');
       }
   
       return $this->render('imc/ImcFiche.html.twig', ['form' => $form->createView(), 'imcResult' => $imcResult]);

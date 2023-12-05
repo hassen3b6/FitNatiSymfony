@@ -17,7 +17,7 @@ class ImcType extends AbstractType
     {
         $builder
             ->add('sexe', ChoiceType::class, [
-                'choices' => [
+                 'choices' => [
                     'Male' => 'male',
                     'Female' => 'female',
                 ],
@@ -39,10 +39,10 @@ class ImcType extends AbstractType
             ])
             // ...
 
-            ->add('recaptcha', EWZRecaptchaType::class, [
-                'label' => false, // Set the label to false to hide it
-                'mapped' => false, // The reCAPTCHA field is not mapped to any entity property
-            ]); // Add a semicolon here
+           // ->add('recaptcha', EWZRecaptchaType::class, [
+               // 'label' => true, // Set the label to false to hide it
+                //'mapped' => false, // The reCAPTCHA field is not mapped to any entity property
+            ; // Add a semicolon here
 
             // ...
 
